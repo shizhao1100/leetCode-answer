@@ -28,6 +28,12 @@
  * @param {string} s
  * @return {number}
  */
-var lengthOfLastWord = function(s) {
-    
+var lengthOfLastWord = function (s) {
+    let stringArray = s.split(' ');
+    for (let i = stringArray.length - 1; i >= 0; i--) {
+        if(stringArray[i].length!=0){
+            return stringArray[i].length
+        }
+    }
+    return 0;
 };
