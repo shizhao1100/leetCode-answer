@@ -42,3 +42,34 @@ var maxSubArray = function (nums) {
     }
     return answer;
 };
+
+// [动态规划] 逆推 
+// 设 dp[n] == dp[m] m = min(0,n)
+// 例如 [-2,1,-3] n = 2,m = 1 dp_2 == dp_1 = 1 
+// 即 dp[n] = max(dp[n-1],sum(dp[m]+value[m+1]+...value[n]),value[n])
+// 即 需要维护的数据为 dp[n-1],m
+// TODO 这个解法还是不对
+var maxSubArray = function (nums) {
+    function sumM2N(value, m, n, valueList) {
+        let sum = value;
+        for (let i = m + 1; i <= n; i++) {
+            sum = sum + valueList[i];
+        }
+        return sum;
+    }
+    if (!nums.length) {
+        return null;
+    }
+    let dp_n = -Infinity;
+    let m = 0;
+    for (let n = 0; n < nums.length; n++) {
+        let summ2n = sumM2N(dp_n, m, n, nums);
+        let _dp_n = Math.max(dp_n, summ2n, nums[n]);
+        if (_dp_n > dp_n) {
+            dp_n = _dp_n;
+            m = n;
+        }
+    }
+    return dp_n;
+}
+maxSubArray([8,-19,5,-4,20]);

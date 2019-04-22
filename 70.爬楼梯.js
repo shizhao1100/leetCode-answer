@@ -40,7 +40,8 @@
  * @param {number} n
  * @return {number}
  */
-// 逆推 爬上最后一级台阶有两种方式，爬了一级||爬了两级， 假设N>=2  则dp[N] = dp[N-1] + dp[N-2]
+// [动态规划] 逆推 爬上最后一级台阶有两种方式，爬了一级||爬了两级， 假设N>=2  则dp[n] = dp[n-1] + dp[n-2]
+// 即这里需要维护的数据为 dp[n-1],dp[n-1]
 var climbStairs = function (n) {
     let answerList = [1, 2];
     for (let i = 2; i <= n; i++) {
@@ -48,4 +49,3 @@ var climbStairs = function (n) {
     }
     return answerList[n - 1];
 };
-
