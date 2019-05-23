@@ -76,3 +76,24 @@ var sortedArrayToBST = function (nums) {
   }
   return tree;
 };
+
+/*
+ * 解法: 分治法
+ * 思路：搜索数组的中位作为根节点构建二叉树，原数组去掉中位数之后生成两个数组，继续寻找中位数作为子树的根节点。
+ * 细节：构建一个方法 采用递归的方式直接对树的节点进行写入
+ */
+var sortedArrayToBST = function (nums) {
+  function sort(left, right) {
+    if (left > right) {
+      return null;
+    }
+    var m = left + Math.floor((right - left) / 2);
+    var root = new TreeNode(nums[m]);
+    root.left = sort(left, m - 1);
+    root.right = sort(m + 1, right);
+    return root;
+  }
+  return sort(0, nums.length - 1);
+};
+
+
