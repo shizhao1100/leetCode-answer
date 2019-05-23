@@ -1,6 +1,6 @@
 # leetCode 源码
 ## 文件注释
-文件注释注释
+文件注释
 ```javascript
 /*
  * 解法: XXX 
