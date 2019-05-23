@@ -36,10 +36,33 @@
  * 假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−231,  231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
  * 
  */
+
+
+ /*
+ * 解法: 迭代法 
+ * 思路：分为正负两种情况处理、取绝对值、翻转数字、判断是否溢出。
+ */
+
 /**
  * @param {number} x
  * @return {number}
  */
-var reverse = function(x) {
-    
+var reverse = function (x) {
+  let answer = 0;
+  let greaterZero = true;
+  if (x <= 0) {
+    greaterZero = false;
+  }
+  let X = Math.abs(x).toString();
+  for (let i = X.length - 1; i >= 0; i--) {
+    answer = answer * 10 + parseInt(X[i]);
+  }
+  if (!greaterZero) {
+    answer = -answer;
+  }
+  if (answer < -2147483648 || answer > 2147483647) {
+    answer = 0;
+  }
+  return answer;
 };
+
