@@ -22,6 +22,11 @@
  * @param {number[]} nums
  * @return {TreeNode}
  */
+/*
+ * 解法: 分治法 
+ * 思路：搜索数组的中位作为根节点构建二叉树，原数组去掉中位数之后生成两个数组，继续寻找中位数作为子树的根节点。
+ * 细节：采用一个队列来维护 数组在顺序 采用这个树顺序的数组，从根节点直接写入树，相对来说降低了setTreeNode方法的难度，但需要维护一个队列。
+ */
 var sortedArrayToBST = function (nums) {
   if (nums.length === 0) {
     return null;
