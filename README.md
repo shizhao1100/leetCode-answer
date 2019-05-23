@@ -1,8 +1,5 @@
 # leetCode 源码
 ## 文件注释
-
-每个文件增加注释
-
 文件注释注释
 ```javascript
 /*
@@ -10,7 +7,6 @@
  * 思路：XXX
  */
 ```
-
 方法注释
 ```javascript
 /*
@@ -18,4 +14,12 @@
  * 思路：XXX
  * 细节：XXX
  */
+```
+## commit规范
+
+```code
+[new way]: 新解法
+[add file]: 新题的解
+[readme]: 新规范
+[doc]: 新注释
 ```
