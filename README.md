@@ -15,6 +15,24 @@
  * 细节：XXX
  */
 ```
+解法学习
+```javascript
+/*
+ * 解法: XXX 
+ * 来自：XXX
+ * 思路：XXX
+ * 细节：XXX
+ */
+```
+错误笔记
+```javascript
+/*
+ * ❌
+ * 解法: XXX 
+ * 思路：XXX
+ * 细节：XXX
+ */
+```
 ## commit规范
 
 ```code
