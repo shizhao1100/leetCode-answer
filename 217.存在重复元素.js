@@ -25,7 +25,7 @@ var containsDuplicate = function (nums) {
 };
 /*
 * 方法：hash-table
-* 细节：对数组进行排序，快排Onlog(n)，再对已排序的数组过一遍。
+* 细节：维护一个hash-table来记录已有的数据信息
 * 时间复杂度：On
 */
 var containsDuplicate = function (nums) {
