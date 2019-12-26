@@ -26,12 +26,6 @@ var isPerfectSquare = function (num) {
 
 };
 
-// TODO
-// 牛顿逼近法
-var isPerfectSquare = function (num) {
-
-};
-
 // 二分查找
 var isPerfectSquare = function (num) {
   let left = 0;
@@ -50,5 +44,20 @@ var isPerfectSquare = function (num) {
   return false;
 };
 
+// 牛顿逼近法
+// 本题也就是求 x^2 - num = 0 的根。
+// 根据牛顿逼近法的求根公式
+// x1 = x0 - f(x0)/(f`(x0))
+// 假设 x0 = num
+// 即第一次迭代为 num-((num * num-num)/ 2 * num)
+// 去x0 = x1 继续迭代
+
+var isPerfectSquare = function (num) {
+  let i = num;
+  while (i * i > num) {
+    i = parseInt(i - (i * i - num) / (2 * num), 10);
+  }
+  return i * i === num
+};
 // @lc code=end
 
