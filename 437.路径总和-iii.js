@@ -28,12 +28,14 @@ var pathSum = function(root, sum) {
 	if (root === null) return 0;
     let answer = 0;
     // 第一层遍历 记录二叉树所有的节点
+    //TODO 一层遍历的结果可以不用记录 这个变量可以被优化
     let nodeArray = [];
     // 第一层遍历的缓存栈
     let nodeStack = [ root ];
     // 这里进行了第一次遍历 记录了二叉树所有的节点
 	while (nodeStack.length) {
-		let node = nodeStack.pop();
+        let node = nodeStack.pop();
+        // TODO 这里可以做优化 把二层循环嵌进来就不用在开nodeArray数组来占用空间
 		nodeArray.push({
 			node: node,
 			sum: 0
