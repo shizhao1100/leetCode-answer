@@ -13,7 +13,7 @@ var findErrorNums = function (nums) {
   let repeatNum = undefined;
   let expectSum = (1 + nums.length) * nums.length / 2;
   let realSum = 0;
-  let hashTable = {}
+  let hashTable = {};
   for (let i = 0; i < nums.length; i++) {
     realSum = realSum + nums[i];
     if (hashTable[nums[i]]) {
