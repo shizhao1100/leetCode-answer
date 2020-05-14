@@ -4,6 +4,8 @@
  * [706] 设计哈希映射
  */
 
+//TODO 回头儿看下hash表
+
 // @lc code=start
 /**
  * Initialize your data structure here.
