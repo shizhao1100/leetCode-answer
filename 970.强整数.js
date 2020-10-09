@@ -42,4 +42,5 @@ var powerfulIntegers = function(x, y, bound) {
 		i++;
 	}
 	return answerList;
-}; // @lc code=end
+};
+// @lc code=end
